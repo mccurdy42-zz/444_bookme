@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Seller Upload</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <style>
+        .submit-book-group {
+            width: 50%;
+            margin:auto;
+            margin-top: 50px;
+        }
+        .button{
+            margin-right:20px;
+        }
+        .instructions{
+            margin-bottom:20px;
+        }
+        .gap{
+            margin-bottom:20px;
+        }
+
+    </style>
+
+
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">BookLoversRUS</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Sell</a></li>
+            <li><a href="#">Page 1</a></li>
+            <li><a href="#">Page 2</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"><span class="glyphicon glyphicon-envelope"></span> Messages</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-user"></span> My Account</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Log out</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="submit-book-group">
+<h2 class="myh2class"> Upload a Textbook</h2>
+
+<div class="instructions">
+    Please fill in all of the fields below to sell your textbook: <br>
+</div>
+
+
+
+<div class="basic">
+    What is the textbook title? <br>
+    <input type="text" class="form-control"name="title" placeholder="Title"><br>
+</div>
+
+<div class="basic">
+    Who is the author? <br>
+    <input type="text" class="form-control"name="author" placeholder="Author"><br>
+</div>
+
+<div class="basic">
+    What is the edition number? <br>
+    <input type="text" class="form-control"name="edition" placeholder="Edition"><br>
+</div>
+
+<div class="basic">
+    What condition is the textbook in? <br>
+    <label class="radio-inline gap"><input type="radio" name="optradio">Brand New</label>
+    <label class="radio-inline gap"><input type="radio" name="optradio">Gently Used</label>
+    <label class="radio-inline gap"><input type="radio" name="optradio">Very Used</label>
+</div>
+
+    <div class="basic gap">
+        Upload a picture of the front of the textbook: <br>
+    </div>
+
+<div class="basic">
+    Is there any highlighting on the pages? <br>
+    <label class="radio-inline gap"><input type="radio" name="optradio">Yes</label>
+    <label class="radio-inline gap"><input type="radio" name="optradio">No</label>
+</div>
+
+<div class="basic">
+    What course was this textbook purchased for? (Course Code)<br>
+    <input type="text" class="form-control"name="course" placeholder="Course Code"><br>
+</div>
+
+<div class="basic">
+    What price would you like to sell this book for? <br>
+    <input type="text" class="form-control"name="price" placeholder="Price"><br>
+</div>
+
+<div class="basic">
+    What is your prefered email address for interested buyers to contact you at? <br>
+    <input type="text" class="form-control" name="email" placeholder="Email Address"><br>
+</div>
+
+
+    <input type="submit" class="button btn btn-primary btn-md" value="Post and Upload Another">
+    <input type="submit" class="btn btn-primary btn-md" value="  Post  ">
+
+
+</form>
+</div>
+
+
+</body>
+</html>
