@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+
+
+        <title>Bootstrap Theme Company</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <div>
+            <title>Sticky Header</title>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+            <style>
+                body {
+                    position: relative;
+                }
+
+                footer {
+
+                    bottom: 0;
+                    left: 0;
+                }
+
+                affix {
+                    top:0;
+                    width: 100%;
+                    z-index: 9999 !important;
+                }
+                navbar {
+                    margin-bottom: 0px;
+                }
+            </style>
+        </div>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="197">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            </button>
+        </div>
+        <div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li><img src = logo1.png align = "left" width = 20% height="auto"> </img></li>
+                    <li><a margin = 100px;> </a></li>
+                    <li><a href="#section1">Sell your Textbooks</a></li>
+                    <li><a href="#section2">Browse Books</a></li>
+                    <li><a href="#section3">Sign in </a></li>
+                    <li><a href="#section4">Join </a></li>
+
+
+            </div>
+        </div>
+    </div>
+</nav>
+</div>
+
+</body>
+</html>
+
+
+<meta charset="UTF-8">
+<title> product page </title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+    }
+
+    /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+    @media (max-width: 600px) {
+
+    }
+</style>
+</head>
+<body>
+
+<div class="row">
+
+    <div class="card text-left">
+        <style>
+
+            .card {
+                /* Add shadows to create the "card" effect */
+                box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+                transition: 0.3s;
+                padding-bottom: 10px;
+            }
+
+            /* On mouse-over, add a deeper shadow */
+            .card:hover {
+                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            }
+
+            /* Add some padding inside the card container */
+                </ul>
+                container {
+                padding: 2px 16px;
+                }
+
+                </style>
+
+
+                <div class="col-sm-4">
+                    <div class="card text-center">
+                        <div class="card-block">
+                            <img class="img-responsive-center" src="compsim.jpg" alt="Comp Sim Book" style= "width:300px;height:300px; margin-top: 20px">
+                            <h3 class="card-title">$50</h3>
+                            <h4 class="card-text">Computation Simulation</h4>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Author: James Brown</li>
+                                <li class="list-group-item">Edition: 3rd Edition</li>
+                            </ul>
+                                <a href="#" class="btn btn-primary">More Details</a>
+                            </div>
+
+                    </div>
+
+    </div>
+
+        <div class="col-sm-4">
+            <div class="card text-center">
+                <div class="card-block">
+                    <img class="img-responsive-center" src="calctext.jpg" alt="Calc Book" style= "width:300px;height:300px; margin-top: 20px">
+                    <h3 class="card-title">$100</h3>
+                    <h4 class="card-text">Calculus for Engineers</h4>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Author: Andrews et Al.</li>
+                        <li class="list-group-item">Edition: 4th Edition</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary">More Details</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="card text-center">
+                <div class="card-block">
+                    <img class="img-responsive-center" src="calctext.jpg" alt="Calc Book" style= "width:300px;height:300px; margin-top: 20px">
+                    <h3 class="card-title">$100</h3>
+                    <h4 class="card-text">Calculus for Engineers</h4>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Author: Andrews et Al.</li>
+                        <li class="list-group-item">Edition: 4th Edition</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary">More Details</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="card text-center">
+                <div class="card-block">
+                    <img class="img-responsive-center" src="calctext.jpg" alt="Calc Book" style= "width:300px;height:300px; margin-top: 20px">
+                    <h3 class="card-title">$100</h3>
+                    <h4 class="card-text">Calculus for Engineers</h4>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Author: Andrews et Al.</li>
+                        <li class="list-group-item">Edition: 4th Edition</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary">More Details</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card text-center">
+                <div class="card-block">
+                    <img class="img-responsive-center" src="calctext.jpg" alt="Calc Book" style= "width:300px;height:300px; margin-top: 20px">
+                    <h3 class="card-title">$100</h3>
+                    <h4 class="card-text">Calculus for Engineers</h4>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Author: Andrews et Al.</li>
+                        <li class="list-group-item">Edition: 4th Edition</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary">More Details</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card text-center">
+                <div class="card-block">
+                    <img class="img-responsive-center" src="calctext.jpg" alt="Calc Book" style= "width:300px;height:300px; margin-top: 20px">
+                    <h3 class="card-title">$100</h3>
+                    <h4 class="card-text">Calculus for Engineers</h4>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Author: Andrews et Al.</li>
+                        <li class="list-group-item">Edition: 4th Edition</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary">More Details</a>
+                </div>
+            </div>
+        </div>
+
+<footer class = "footer">
+    <p><img class="img-responsive" src="background-footer.jpg"></p>
+    <p1>Project Created By: Alyssa Hopkins, Allison Jacobs, Meghan Stronach and Sarah McCurdy
+        Course: MSCI 444</p1>
+    </footer>
+
+
+
+</head>
+</html>
