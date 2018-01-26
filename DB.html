@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Theme Made By www.w3schools.com - No Copyright -->
+    <title>Seller Dashboard</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        .jumbotron {
+            background-color: #f2f8f2;
+            color: #070707;
+            padding: 2% 10%;
+
+        }
+        .container-fluid {
+            padding: 60px 50px;
+        }
+
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            margin-bottom: 10px;
+        }
+        .carousel-control.right, .carousel-control.left {
+            background-image: none;
+            color: #666868;
+
+        }
+        .carousel-indicators li {
+            border-color: #666868;
+
+        }
+        .carousel-indicators li.active {
+            background-color: #666868;
+
+        }
+        .carousel-inner img {
+            margin: auto;
+            width:  15%;
+            height: 15%;
+        }
+        .item h4 {
+            font-size: 150%;
+            line-height: 25%;
+            font-weight: 300;
+            font-style: italic;
+            margin: 0 0 4% 0;
+            line-break: auto;
+        }
+
+        .item span {
+            font-style: normal;
+        }
+
+        .panel-footer h3 {
+            font-size: 32px;
+        }
+        .panel-footer h4 {
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        .navbar {
+            margin-bottom: 0;
+            background-color: #e6f1eb;
+            z-index: 9999;
+            border: 0;
+            font-size: 12px !important;
+            line-height: 1.42857143 !important;
+            letter-spacing: 4px;
+            border-radius: 0;
+        }
+        .navbar li a, .navbar .navbar-brand {
+            color: #070707 !important;
+        }
+
+        /*nav bar - hover over the button it goes black with white text*/
+        .navbar-nav li a:hover, .navbar-nav li.active a {
+            color: #f2f8f2 !important;
+            background-color: #4c4b93 !important;
+        }
+        .navbar-default .navbar-toggle {
+            border-color: transparent;
+            color: #070707 !important;
+        }
+
+        .listing {
+            color: black;
+            padding-left: 8%;
+            font-size: xx-large;
+            /*background colour tbd - have the ability to make this change
+            background-color: #4c4b93;*/
+        }
+
+        .sellerinfo{
+            font-size: medium;
+            padding-left:8%;
+            padding-bottom:5%;
+
+        }
+
+        @media screen and (max-width: 768px) {
+
+        }
+        button {
+           background-color: #4c4b93;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 150%;
+            /*the first % is for the margin on the top/bottom, second is left/right*/
+            margin: 0% 7%;
+            cursor: pointer;
+            height: 5%;
+            width: 20%;
+        }
+        button2{
+            background-color: #4c4b93;
+            border: none;
+            color: white;
+            padding: 0.5% 1%;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 100%;
+            /*the first % is for the margin on the top/bottom, second is left/right*/
+            margin: 1% 0%;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+<!--Nav bar-->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            </button>
+            <!--logo and little book using glyphicon-->
+            <a class="navbar-brand" href="#myPage"><span class="glyphicon glyphicon-book"></span>Book-Me-Up</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <!--The three icons at the right side of the nav bar-->
+                <li><a href="#"><span class="glyphicon glyphicon-envelope"></span> Messages</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span> My Account</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Log out</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!--main welcome salutation and header-->
+<div class="jumbotron">
+
+   <center> <h1>Welcome Seller!</h1>
+   <p> This is your dashboard and main control center for maintaining listings.<br>
+    Want to sell another book, or modify a current listing? Click one of the buttons below!</p></center><br><br>
+   <center> <button class="button">Sell Book</button>
+    <button class="button" >Modify a Listing</button></center>
+</div>
+
+<!--beginning of the rest of the page - current listings and seller info-->
+
+<div class = "listing">
+    <span class="glyphicon glyphicon-tags"></span>      Current Listings
+</div>
+
+
+<!--carousel of the passing listings-->
+<div id="myCarousel" class="carousel slide text-center"><br><br> <!--data-ride="carousel"-->
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <!--adds in the circles at the bottom of carousel to show how many available to swipe through-->
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+
+    <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img src = "calc.jpg" alt = "Calculus for Engineers"><br>
+                <h4> Calculus for Engineers<br><br><br><br><br>
+                    Selling Price: $100 <br><br><br><br><br>
+                    Edition: 4th </h4>
+            </div>
+            <div class="item">
+                <img src = "physics.jpg" alt = "Physics"><br>
+                <h4> Physics for Engineers<br><br><br><br><br>
+                Selling Price: $80 <br><br><br><br><br>
+                Edition: 4th </h4>
+            </div>
+            <div class="item">
+                <img src = "linalg.jpg" alt = "Linear Algebra"><br>
+                <h4> Linear Algebra for Engineers<br><br><br><br><br>
+                    Selling Price: $60 <br><br><br><br><br>
+                    Edition: 2nd </h4>
+            </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span><br>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><br>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>
+
+<!-- Container (Seller Info Section) -->
+<div class="listing">
+    <span class="glyphicon glyphicon-user"></span>      Seller Information<br><br>
+</div>
+<div class = "sellerinfo">
+First Name:<br><br><br>
+Last Name: <br><br><br>
+Email:<br><br><br>
+Student?:<br><br><br>
+Member Since:<br><br>
+    <button2><span class="glyphicon glyphicon-edit"></span> Edit</button2>
+</div>
+
+
+</body>
+</html>
