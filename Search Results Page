@@ -24,27 +24,24 @@
 
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
 
-<nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="197">
+<nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-            </button>
+            <a class="navbar-brand" href="#">BookLoversRUS</a>
         </div>
-        <div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav">
-                    <li><img src = logo1.png align = "left" width = 20% height="auto"> </img></li>
-                    <li><a margin = 100px;> </a></li>
-                    <li><a href="#section1">Sell your Textbooks</a></li>
-                    <li><a href="#section2">Browse Books</a></li>
-                    <li><a href="#section3">Sign in </a></li>
-                    <li><a href="#section4">Join </a></li>
-
-
-            </div>
-        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Sell</a></li>
+            <li><a href="#">Page 1</a></li>
+            <li><a href="#">Page 2</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"><span class="glyphicon glyphicon-envelope"></span> Messages</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-user"></span> My Account</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Log out</a></li>
+        </ul>
     </div>
 </nav>
+
 </div>
 
 </body>
@@ -119,11 +116,11 @@
 
         </ul>​
         </p>
-                <div class="col-sm-4">
+                <div class="col-sm-3">
                     <div class="card text-center">
                         <div class="card-block">
-                            <img class="img-responsive-center" src="compsim.jpg" alt="Comp Sim Book" style= "width:300px;height:300px; margin-top: 20px">
-                            <h3 class="card-title">$50</h3>
+                            <img class="img-responsive-center" src="compsim.jpg" alt="Comp Sim Book" style= "width:60%;height:60%; margin-top: 20px">
+                            <h2 class="card-title">$50</h2>
                             <h4 class="card-text">Computation Simulation</h4>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">Author: James Brown</li>
@@ -136,11 +133,11 @@
 
     </div>
 
-        <div class="col-sm-4">
+        <div class="col-sm-3">
             <div class="card text-center">
                 <div class="card-block">
-                    <img class="img-responsive-center" src="calctext.jpg" alt="Calc Book" style= "width:300px;height:300px; margin-top: 20px">
-                    <h3 class="card-title">$100</h3>
+                    <img class="img-responsive-center" src="calctext.jpg" alt="Calc Book" style= "width:60%;height:60%; margin-top: 20px">
+                    <h2 class="card-title">$100</h2>
                     <h4 class="card-text">Calculus for Engineers</h4>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">Author: Andrews et Al.</li>
@@ -151,11 +148,11 @@
             </div>
         </div>
 
-        <div class="col-sm-4">
+        <div class="col-sm-3">
             <div class="card text-center">
                 <div class="card-block">
-                    <img class="img-responsive-center" src="calctext.jpg" alt="Calc Book" style= "width:300px;height:300px; margin-top: 20px">
-                    <h3 class="card-title">$100</h3>
+                    <img class="img-responsive-center" src="calctext.jpg" alt="Calc Book" style= "width:60%;height:60%; margin-top: 20px">
+                    <h2 class="card-title">$100</h2>
                     <h4 class="card-text">Calculus for Engineers</h4>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">Author: Andrews et Al.</li>
@@ -166,11 +163,11 @@
             </div>
         </div>
 
-        <div class="col-sm-4">
+        <div class="col-sm-3">
             <div class="card text-center">
                 <div class="card-block">
-                    <img class="img-responsive-center" src="calctext.jpg" alt="Calc Book" style= "width:300px;height:300px; margin-top: 20px">
-                    <h3 class="card-title">$100</h3>
+                    <img class="img-responsive-center" src="calctext.jpg" alt="Calc Book" style= "width:60%;height:60%; margin-top: 20px">
+                    <h2 class="card-title">$100</h2>
                     <h4 class="card-text">Calculus for Engineers</h4>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">Author: Andrews et Al.</li>
@@ -180,11 +177,11 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-3">
             <div class="card text-center">
                 <div class="card-block">
-                    <img class="img-responsive-center" src="calctext.jpg" alt="Calc Book" style= "width:300px;height:300px; margin-top: 20px">
-                    <h3 class="card-title">$100</h3>
+                    <img class="img-responsive-center" src="calctext.jpg" alt="Calc Book" style= "width:60%;height:60%; margin-top: 20px">
+                    <h2 class="card-title">$100</h2>
                     <h4 class="card-text">Calculus for Engineers</h4>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">Author: Andrews et Al.</li>
@@ -194,11 +191,11 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-3">
             <div class="card text-center">
                 <div class="card-block">
-                    <img class="img-responsive-center" src="calctext.jpg" alt="Calc Book" style= "width:300px;height:300px; margin-top: 20px">
-                    <h3 class="card-title">$100</h3>
+                    <img class="img-responsive-center" src="calctext.jpg" alt="Calc Book" style= "width:60%;height:60%; margin-top: 20px">
+                    <h2 class="card-title">$100</h2>
                     <h4 class="card-text">Calculus for Engineers</h4>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">Author: Andrews et Al.</li>
@@ -211,11 +208,7 @@
 
 <footer class = "footer">
     <p><img class="img-responsive" src="background-footer.jpg"></p>
-    <p1>Project Created By: Alyssa Hopkins, Allison Jacobs, Meghan Stronach and Sarah McCurdy
-        Course: MSCI 444</p1>
     </footer>
-
-
 
 </head>
 </html>
