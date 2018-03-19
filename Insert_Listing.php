@@ -27,42 +27,42 @@
 
 if (empty($_POST['title'])) {
     echo "no title";
- header('Location: test2');
+ header('Location: new_listing');
   }
 
 if (empty($_POST['price'])) {
     echo "no title";
- header('Location: test2');
+ header('Location: new_listing');
   }
 
 if (empty($_POST['photo_url'])) {
     echo "no title";
- header('Location: test2');
+ header('Location: new_listing');
   }
 
 if (empty($_POST['author'])) {
     echo "no title";
- header('Location: test2');
+ header('Location: new_listing');
   }
 
 if (empty($_POST['edition'])) {
     echo "no title";
- header('Location: test2');
+ header('Location: new_listing');
   }
 
 if (empty($_POST['bookCondition'])) {
     echo "no title";
- header('Location: test2');
+ header('Location: new_listing');
   }
 
  if (empty($_POST['highlighting'])) {
      echo "no title";
-  header('Location: test2');
+  header('Location: new_listing');
    }
 
 if (empty($_POST['course'])) {
     echo "no title";
- header('Location: test2');
+ header('Location: new_listing');
   }
 
 $result = mysqli_query($mysqli, "SELECT MAX(listing_ID) FROM listing");
