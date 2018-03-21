@@ -199,7 +199,9 @@ while ($stmt3->fetch()){
    <?php } ?>
    <p> This is your dashboard and main control center for maintaining listings.<br>
     Want to sell another book, or delete a current listing? Click one of the buttons below!</p></center><br><br>
-   <center> <button class="button">Sell Book</button>
+   <form action="New_Listing.php" method="post">
+    <center> <button class="button">Sell Book</button>
+    </form>
 </div>
 
 <!--beginning of the rest of the page - current listings and seller info-->
