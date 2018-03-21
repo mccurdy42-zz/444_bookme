@@ -65,7 +65,7 @@ $test = strcmp($password, $passwordSubmitted);
 
 if ($test == 0){
   //need to grab the seller_ID and open the correct seller dashboard accordingly
-header('Location: seller_dashboard.php');
+header('Location: seller_dashboard.php?success=true');
 }else{
  header('Location: log_in2.html');
 }
