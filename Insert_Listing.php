@@ -28,7 +28,7 @@
 
 if (empty($_POST['title'])) {
     echo "no title";
- header('Location: new_listing');
+ header('Location: New_listing');
   }
 
 if (empty($_POST['price'])) {
