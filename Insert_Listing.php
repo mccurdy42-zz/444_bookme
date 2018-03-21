@@ -11,11 +11,12 @@
 <body>
 
 <?php
+    session_start();
     error_reporting(E_ALL ^ E_NOTICE);
     include ('./my_connect.php');
     $mysqli = get_mysqli_conn();
 
-    $seller_ID =1;
+    $seller_ID =$_SESSION['seller_id'];
     $price =$_POST['price'];
     $photo_url =$_POST['photo_url'];
     $title =$_POST['title'];
@@ -83,7 +84,7 @@ header('Location: seller_dashboard.php');
   }
 
 if (isset( $_POST['post2'] )) {
-  header('Location: Second_Listing');
+  header('Location: New_Listing.php?success=true');
   }
 
 $mysqli->close();
