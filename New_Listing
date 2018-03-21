@@ -21,11 +21,22 @@
         .gap{
             margin-bottom:20px;
         }
+        .hidden {
+            display: none;
+        }
 
     </style>
 
 </head>
 <body>
+
+<?php if (isset($_GET['success'])): ?>
+<div class="alert alert-success alert-dismissible">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Success!</strong> You have uploaded another book to your listings.
+</div>
+<?php endif; ?>
+
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
