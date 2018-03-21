@@ -184,10 +184,12 @@ $stmt3->bind_result($seller_firstName);
 <br><br><br>
 
 <!--alert to notify a successful login-->
+<?php if (isset($_GET['success'])): ?>
 <div class="alert alert-success alert-dismissible">
-  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-  <strong>Success!</strong> Indicates a successful or positive action.
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Success!</strong>
 </div>
+<?php endif; ?>
 
 
 <!--main welcome salutation and header-->
