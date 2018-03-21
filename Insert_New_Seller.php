@@ -35,11 +35,11 @@
 
 $result = mysqli_query($mysqli, "SELECT MAX(seller_ID) FROM seller");
 $row = mysqli_fetch_array($result);
-$seller_ID= $row[0]+1;
-$_SESSION['seller_id'] = $seller_ID;
+$id= $row[0]+1;
+$_SESSION['seller_id'] = $id;
 
 $sql = "INSERT INTO seller(seller_ID, seller_email, seller_firstName, seller_lastName, average_rating)
- VALUES ('$seller_ID','$email','$firstName','$lastName', NULL )";
+ VALUES ('$id','$email','$firstName','$lastName', NULL )";
 
  if ($mysqli->query($sql) === TRUE) {
  } else {
@@ -47,7 +47,7 @@ $sql = "INSERT INTO seller(seller_ID, seller_email, seller_firstName, seller_las
  }
 
  $sql2 = "INSERT INTO login(seller_ID, seller_email, seller_password)
- VALUES ('$seller_ID','$email','$password')";
+ VALUES ('$id','$email','$password')";
 
     if ($mysqli->query($sql2) === TRUE) {
     } else {

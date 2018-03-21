@@ -30,7 +30,11 @@
 </head>
 <body>
 
-<?php if (isset($_GET['success'])): ?>
+<?php
+session_start();
+$id =$_SESSION['seller_id'];
+
+if (isset($_GET['success'])): ?>
 <div class="alert alert-success alert-dismissible">
     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
     <strong>Success!</strong> You have uploaded another book to your listings.
@@ -138,7 +142,10 @@
 </div>
 
 
-
+<?php
+echo "here";
+ echo $id;
+ echo "still here"; ?>
 
 </body>
 </html>
