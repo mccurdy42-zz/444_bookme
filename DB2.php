@@ -1,3 +1,32 @@
+<?php
+session_start();
+$servername = "localhost";
+$username = "s2mccurd";
+$password = "Winter@*%2018";
+$dbname = "s2mccurd";
+
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$id = $_SESSION['seller_ID'];
+
+$query = 'SELECT seller_firstName FROM seller WHERE seller_ID = ?';
+
+$stmt3 = $conn->prepare($query);
+
+$stmt3->bind_param('i', $id);
+$stmt3->execute();
+$stmt3->store_result();
+//$stmt2->bind_result($seller_ID);
+$stmt3->bind_result($seller_firstName);
+
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -132,8 +161,6 @@
     </style>
 </head>
 <body>
-  does this work????
-
 
 <!--Nav bar-->
 <nav class="navbar navbar-default navbar-fixed-top">
@@ -165,10 +192,13 @@
 
 <!--main welcome salutation and header-->
 <div class="jumbotron">
-
-   <center> <h1>Welcome Seller!</h1>
+<?php
+while ($stmt3->fetch()){
+ ?>
+   <center> <h1>Welcome <?php echo $seller_firstName ?>!</h1>
+   <?php } ?>
    <p> This is your dashboard and main control center for maintaining listings.<br>
-    Want to sell another book, or modify a current listing? Click one of the buttons below!</p></center><br><br>
+    Want to sell another book, or delete a current listing? Click one of the buttons below!</p></center><br><br>
    <center> <button class="button">Sell Book</button>
 </div>
 
@@ -180,20 +210,17 @@
 
 
 <?php
-$servername = "localhost";
-$username = "s2mccurd";
-$password = "Winter@*%2018";
-$dbname = "s2mccurd";
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+$sql = "SELECT title, author, price, edition, bookCondition, highlighting, courseCode FROM listing WHERE seller_ID = ?";
+$stmt = $conn->prepare($sql);
 
-$sql = "SELECT title, author, price, edition, bookCondition, highlighting, courseCode FROM listing WHERE seller_ID = 2";
-$result = $conn->query($sql);
+$stmt->bind_param('i', $id);
+$stmt->execute();
+$stmt->store_result();
+//$stmt2->bind_result($seller_ID);
+$stmt->bind_result($title, $author, $price, $edition, $bookCondition, $highlighting, $courseCode);
+
+//$result = $conn->query($sql);
 
 //$conn->close();
 ?>
@@ -206,25 +233,28 @@ $result = $conn->query($sql);
         <th>Condition</th>
         <th>Highlighting</th>
         <th>Course Codes</th>
-        <th>Edit Listing</th>
+        <!--<th>Edit Listing</th>-->
         <th>Delete Listing</th>
     </tr>
 
-    <?php if($result->num_rows > 0){
-    while($row = $result->fetch_assoc()) {    ?>
+    <?php //if($result->num_rows > 0){
+  //  while($row = $result->fetch_assoc()) {
+  while ($stmt->fetch()){
+
+   ?>
     <tr>
-         <td><?php echo $row['title']; ?></td>
-         <td><?php echo $row['author']; ?></td>
-         <td><?php echo $row['price']; ?></td>
-         <td><?php echo $row['edition']; ?></td>
-         <td><?php echo $row['bookCondition']; ?></td>
-         <td><?php echo $row['highlighting']; ?></td>
-         <td><?php echo $row['courseCode']; ?></td>
-         <td> <button2><span class="glyphicon glyphicon-edit"></span> Edit</button2></td>
+         <td><?php echo $title; ?></td>
+         <td><?php echo $author; ?></td>
+         <td><?php echo $price; ?></td>
+         <td><?php echo $edition; ?></td>
+         <td><?php echo $bookCondition; ?></td>
+         <td><?php echo $highlighting; ?></td>
+         <td><?php echo $courseCode; ?></td>
+         <!--<td> <button2><span class="glyphicon glyphicon-edit"></span> Edit</button2></td>-->
          <td> <button2><span class="glyphicon glyphicon-remove"></span> Delete</button2></td>
 
          </tr>
-    <?php }} ?>
+    <?php } ?>
 
 
 </table><br><br></center>
@@ -236,18 +266,26 @@ $result = $conn->query($sql);
 <div class = "sellerinfo">
 
 <?php
-$sql2 = "SELECT seller_firstName, seller_lastName, seller_email FROM seller WHERE seller_ID = 2";
-$result2 = $conn->query($sql2);
-?>
+$sql2 = "SELECT seller_firstName, seller_lastName, seller_email FROM seller WHERE seller_ID = ?";
+//$result2 = $conn->query($sql2);
+$stmt2 = $conn->prepare($sql2);
 
-<?php if($result2->num_rows > 0){
-    while($row = $result2->fetch_assoc()) {    ?>
+$stmt2->bind_param('i', $id);
+$stmt2->execute();
+$stmt2->store_result();
+//$stmt2->bind_result($seller_ID);
+$stmt2->bind_result($seller_firstName, $seller_lastName, $seller_email);
+//if($result2->num_rows > 0){
+  //  while($row = $result2->fetch_assoc()) {
+while($stmt2->fetch()){
 
-First Name: <?php echo $row['seller_firstName']; ?><br><br><br>
-Last Name:  <?php echo $row['seller_lastName']; ?><br><br><br>
-Email:      <?php echo $row['seller_email']; ?><br><br><br>
-    <button2><span class="glyphicon glyphicon-edit"></span> Edit</button2>
-    <?php }} ?>
+  ?>
+
+First Name: <?php echo $seller_firstName; ?><br><br><br>
+Last Name:  <?php echo $seller_lastName; ?><br><br><br>
+Email:      <?php echo $seller_email; ?><br><br><br>
+  <!--  <button2><span class="glyphicon glyphicon-edit"></span> Edit</button2>-->
+    <?php } ?>
 </div>
 
 
