@@ -1,4 +1,5 @@
 <?php
+session_destroy();
 session_start();
 
 $username =  $_POST['username'];
@@ -46,10 +47,10 @@ if ($conn->connect_error) {
  $stmt2->bind_param('s', $un1);
  $stmt2->execute();
  $stmt2->store_result();
- $stmt2->bind_result($seller_ID);
+ $stmt2->bind_result($id);
  while ($stmt2->fetch()){
   //  echo 'Password: '.$seller_password.'<br><br>';
-    $_SESSION['seller_ID'] = $seller_ID;
+    $_SESSION['seller_ID'] = $id;
   //  echo $password;
 
  }
@@ -67,7 +68,8 @@ if ($test == 0){
   //need to grab the seller_ID and open the correct seller dashboard accordingly
 header('Location: seller_dashboard.php?success=true');
 }else{
- header('Location: log_in2.html');
+ header('Location: log_in1.php?error=true'
+);
 }
 
 
