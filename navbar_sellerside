@@ -1,16 +1,15 @@
-<!--Nav bar-->
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
             </button>
             <!--logo and little book using glyphicon-->
-            <a class="navbar-brand" href="home.html"><span class="glyphicon glyphicon-book"></span>Book-Me-Up</a>
+            <a class="navbar-brand" href="home.php"><span class="glyphicon glyphicon-book"></span>Book-Me-Up</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
                <!---- icon login -->
-                <li><a href="log_in.php"><span class="glyphicon glyphicon-log-out"></span>Log Out</a></li>
+                <li><a href="log_in1.php"><span class="glyphicon glyphicon-log-out"></span>Log Out</a></li>
             </ul>
         </div>
     </div>
