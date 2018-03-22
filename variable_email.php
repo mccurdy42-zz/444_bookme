@@ -45,6 +45,14 @@ $selleremail= $seller_email;
        mail($selleremail,"Congratulations! There is interest in your textbook on Book-Me-Up.", $msgfinal , $headers);
 
 
+$message_body = "Thank you for contacting the seller about their listing. Once you have completed your transaction with the seller please review them here, by entering this code: ";
+$code = $sellerID;
+$link = ", at this link: ";
+
+$final = $message_body . " " . $code . " " . $link;
+$headers = "From: Book-Me-Up@donotreply.com";
+
+mail($email,"Thank you for your interest in a listing!", $final , $headers);
 
 
 
