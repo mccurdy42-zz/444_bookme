@@ -83,7 +83,6 @@
 
 <?php
 
-
     error_reporting(E_ALL ^ E_NOTICE);
     include ('./my_connect.php');
     $mysqli = get_mysqli_conn();
@@ -102,22 +101,22 @@ echo "Email Sent!!!!!!!";
 
 if (empty($_POST['firstname'])) {
     echo "no name";
- header('Location: product-page-actual.html');
+ header('Location: ppa.php');
   }
 
   if (empty($_POST['lastname'])) {
       echo "no name";
-   header('Location: product-page-actual.html');
+   header('Location: ppa.php');
     }
 
 if (empty($_POST['email'])) {
     echo "no email";
- header('Location: product-page-actual.html');
+ header('Location: ppa.php');
   }
 
 if (empty($_POST['message_content'])) {
     echo "no message";
- header('Location: product-page-actual.html');
+ header('Location: ppa.php');
   }
 
 $result = mysqli_query($mysqli, "SELECT MAX(message_ID) FROM message");
@@ -143,7 +142,7 @@ $message_ID= $row[0]+1;
     }
 
 if (isset( $_POST['message_content'] )) {
-header('Location: product-page-actual.html');
+header('Location: ppa.php');
 echo "Message sent! im";
   }
 
