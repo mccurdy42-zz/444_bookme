@@ -15,6 +15,7 @@ if ($conn->connect_error) {
 
 $id = $_SESSION['seller_ID'];
 
+
 $query = 'SELECT seller_firstName FROM seller WHERE seller_ID = ?';
 
 $stmt3 = $conn->prepare($query);
@@ -162,28 +163,28 @@ $stmt3->bind_result($seller_firstName);
 </head>
 <body>
 
-<!--Nav bar-->
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-            </button>
-            <!--logo and little book using glyphicon-->
-            <a class="navbar-brand" href="#myPage"><span class="glyphicon glyphicon-book"></span>Book-Me-Up</a>
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav navbar-right">
-                <!--The three icons at the right side of the nav bar-->
-                <li><a href="#"><span class="glyphicon glyphicon-envelope"></span> Messages</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-user"></span> My Account</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Log out</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-<br><br><br>
+  <!--Nav bar-->
+  <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              </button>
+              <!--logo and little book using glyphicon-->
+              <a class="navbar-brand" href="home.php"><span class="glyphicon glyphicon-book"></span>Book-Me-Up</a>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+              <ul class="nav navbar-nav navbar-right">
+                 <!---- icon login -->
+                  <li><a href="log_in1.php"><span class="glyphicon glyphicon-log-out"></span>Log Out</a></li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+  <br><br><br>
 
 <!--alert to notify a successful login-->
+<?php $_GET['error']=NULL; ?>
+
 <?php if (isset($_GET['success'])): ?>
 <div class="alert alert-success alert-dismissible">
     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -254,8 +255,23 @@ $stmt->bind_result($title, $author, $price, $edition, $bookCondition, $highlight
          <td><?php echo $bookCondition; ?></td>
          <td><?php echo $highlighting; ?></td>
          <td><?php echo $courseCode; ?></td>
-         <!--<td> <button2><span class="glyphicon glyphicon-edit"></span> Edit</button2></td>-->
-         <td> <button2><span class="glyphicon glyphicon-remove"></span> Delete</button2></td>
+
+        <?php $_SESSION['title'] = $title;
+            $_SESSION['author'] = $author;
+            $_SESSION['price'] = $price;
+            $_SESSION['edition'] = $edition;
+            $_SESSION['bookCondition'] = $bookCondition;
+            $_SESSION['highlighting'] = $highlighting;
+            $_SESSION['courseCode'] = $courseCode;?>
+<!--
+         <td> <button2><span class="glyphicon glyphicon-edit"></span> Edit</button2></td>-->
+  <form action="deleteListing.php" method="post">
+<!--<td> <button2><input type = "submit" span class="glyphicon glyphicon-remove" name="deleteListing" value= "Delete"></span> </button2></td>-->
+  <td> <button2><input type = "submit" style= "background-color:#4c4b93" class="glyphicon glyphicon-remove" name="deleteListing" value= "Delete"> </button2></td>
+         </form>
+
+
+
 
          </tr>
     <?php } ?>
@@ -289,9 +305,8 @@ First Name: <?php echo $seller_firstName; ?><br><br><br>
 Last Name:  <?php echo $seller_lastName; ?><br><br><br>
 Email:      <?php echo $seller_email; ?><br><br><br>
   <!--  <button2><span class="glyphicon glyphicon-edit"></span> Edit</button2>-->
-    <?php } ?>
+
+<?php } ?>
 </div>
 
-
-</body>
 </html>
