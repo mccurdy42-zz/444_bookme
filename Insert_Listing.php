@@ -16,8 +16,8 @@
     include ('./my_connect.php');
     $mysqli = get_mysqli_conn();
 
-    //$id =$_SESSION['seller_id'];
-    $id = 3;
+    $id =$_SESSION['seller_ID'];
+    //$id = 3;
     $price =$_POST['price'];
     $photo_url =$_POST['photo_url'];
     $title =$_POST['title'];
@@ -94,3 +94,4 @@ $mysqli->close();
 
 </body>
 </html>
+
