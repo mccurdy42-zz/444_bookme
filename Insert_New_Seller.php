@@ -3,6 +3,7 @@
 <body>
 
 <?php
+session_destroy();
     session_start();
     error_reporting(E_ALL ^ E_NOTICE);
     include ('./my_connect.php');
@@ -36,7 +37,7 @@
 $result = mysqli_query($mysqli, "SELECT MAX(seller_ID) FROM seller");
 $row = mysqli_fetch_array($result);
 $id= $row[0]+1;
-$_SESSION['seller_id'] = $id;
+$_SESSION['seller_ID'] = $id;
 
 $sql = "INSERT INTO seller(seller_ID, seller_email, seller_firstName, seller_lastName, average_rating)
  VALUES ('$id','$email','$firstName','$lastName', NULL )";
@@ -61,3 +62,4 @@ $mysqli->close();
 
 </body>
 </html>
+
