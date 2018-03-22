@@ -1,3 +1,8 @@
+<?php
+session_start();
+$id =$_SESSION['seller_ID'];
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,8 +36,7 @@
 <body>
 
 <?php
-session_start();
-$id =$_SESSION['seller_id'];
+
 
 if (isset($_GET['success'])): ?>
 <div class="alert alert-success alert-dismissible">
@@ -41,24 +45,24 @@ if (isset($_GET['success'])): ?>
 </div>
 <?php endif; ?>
 
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
+<!--Nav bar-->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">BookLoversRUS</a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            </button>
+            <!--logo and little book using glyphicon-->
+            <a class="navbar-brand" href="home.html"><span class="glyphicon glyphicon-book"></span>Book-Me-Up</a>
         </div>
-        <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Sell</a></li>
-            <li><a href="#">Page 1</a></li>
-            <li><a href="#">Page 2</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon glyphicon-envelope"></span> Messages</a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-user"></span> My Account</a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Log out</a></li>
-        </ul>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+               <!---- icon login -->
+                <li><a href="log_in.php"><span class="glyphicon glyphicon-log-out"></span>Log Out</a></li>
+            </ul>
+        </div>
     </div>
 </nav>
-
+<br><br><br>
 <div class="submit-book-group" >
     <h2 class="myh2class"> Upload a Textbook</h2>
 
@@ -142,10 +146,6 @@ if (isset($_GET['success'])): ?>
 </div>
 
 
-<?php
-echo "here";
- echo $id;
- echo "still here"; ?>
 
 </body>
 </html>
