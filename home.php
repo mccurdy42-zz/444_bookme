@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Bootstrap Theme Company</title>
+    <title>Book-Me-Up Homepage</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -11,55 +11,169 @@
 </head>
 <body>
 
-<style>
-    .jumbotron {
-        background-color: #72ddf4;
-        color: #fff;
-        padding: 100px 25px;
-    }
+  <style>
+      .jumbotron {
+          background-color: #f2f8f2;
+          color: #070707;
+          padding: 2% 10%;
 
-    .container-fluid {
-        padding: 60px 50px;
-    }
+      }
+      .container-fluid {
+          padding: 60px 50px;
+      }
 
-    .bg-grey {
-        background-color: #f6f6f6;
-    }
+      .thumbnail img {
+          width: 100%;
+          height: 100%;
+          margin-bottom: 10px;
+      }
 
-    .logo {
-        font-size: 200px;
-    }
-    @media screen and (max-width: 768px) {
-        .col-sm-4 {
-            text-align: center;
-            margin: 25px 0;
+      .item h4 {
+          font-size: 150%;
+          line-height: 25%;
+          font-weight: 300;
+          font-style: italic;
+          margin: 0 0 4% 0;
+          line-break: auto;
+      }
+
+      .item span {
+          font-style: normal;
+      }
+
+      .panel-footer h3 {
+          font-size: 32px;
+      }
+      .panel-footer h4 {
+          color: #aaa;
+          font-size: 14px;
+      }
+
+      .navbar {
+          margin-bottom: 0;
+          background-color: #e6f1eb;
+          z-index: 9999;
+          border: 0;
+          font-size: 12px !important;
+          line-height: 1.42857143 !important;
+          letter-spacing: 4px;
+          border-radius: 0;
+      }
+      .navbar li a, .navbar .navbar-brand {
+          color: #070707 !important;
+      }
+
+      /*nav bar - hover over the button it goes black with white text*/
+      .navbar-nav li a:hover, .navbar-nav li.active a {
+          color: #f2f8f2 !important;
+          background-color: #4c4b93 !important;
+      }
+      .navbar-default .navbar-toggle {
+          border-color: transparent;
+          color: #070707 !important;
+      }
+
+      .listing {
+          color: black;
+          padding-left: 8%;
+          font-size: xx-large;
+          /*background colour tbd - have the ability to make this change
+          background-color: #4c4b93;*/
+      }
+
+      .sellerinfo{
+          font-size: medium;
+          padding-left:8%;
+          padding-bottom:5%;
+
+      }
+      @media screen and (max-width: 768px) {
+
+      }
+      button {
+         background-color: #4c4b93;
+          border: none;
+          color: white;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 150%;
+          /*the first % is for the margin on the top/bottom, second is left/right*/
+          margin: 0% 7%;
+          cursor: pointer;
+          height: 7%;
+          width: 20%;
+      }
+      button2{
+          background-color: #4c4b93;
+          border: none;
+          color: white;
+          padding: 0.5% 1%;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 120%;
+          /*the first % is for the margin on the top/bottom, second is left/right*/
+          margin: 1% 0%;
+          cursor: pointer;
+      }
+      .button3 {
+         background-color: #4c4b93;
+          border: none;
+          color: white;
+          padding: 10px 20px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 120%;
+          /*the first % is for the margin on the top/bottom, second is left/right*/
+          margin: 0% 7%;
+          cursor: pointer;
+          height: 7%;
+          width: 20%;
+      }
+      .button4 {
+         background-color: #4c4b93;
+          border: none;
+          color: white;
+          padding: 10px 20px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 120%;
+          /*the first % is for the margin on the top/bottom, second is left/right*/
+          margin: 0% 7%;
+          cursor: pointer;
+          height: 7%;
+          width: 75%;
+      }
+
+      table, th,td{
+      padding-left: 20%;
+          border: 1px solid black;
+          border-collapse: collapse;
+      }
+  th, td{
+      padding: 5px;
+  }
+      th{
+          text-align: left;
+      }
+      .logo {
+            font-size: 200px;
         }
-    }
 
-    .navbar {
-        margin-bottom: 0;
-        background-color: #72ddf4;
-        z-index: 9999;
-        border: 0;
-        font-size: 12px !important;
-        line-height: 1.42857143 !important;
-        letter-spacing: 4px;
-        border-radius: 0;
-    }
+            .col-sm-4 {
+                text-align: center;
+                margin: 25px 0;
 
-    .navbar li a, .navbar .navbar-brand {
-        color: #fff !important;
-    }
+            }
+            .col-sm-8 {
+                text-align: center;
+                margin: 25px 0;
 
-    .navbar-nav li a:hover, .navbar-nav li.active a {
-        color: #72ddf4 !important;
-        background-color: #fff !important;
-    }
-
-    .navbar-default .navbar-toggle {
-        border-color: transparent;
-        color: #fff !important;
-    }
+            }
 
     /* Dropdown Button */
     .dropbtn {
@@ -107,29 +221,27 @@
     .show {display:block;}
 </style>
 
-
-
 <body>
 <div class="jumbotron text-center">
-    <h1>Book == me </h1>
-    <p>We specialize in knowledge</p>
+    <h1>Book-Me-Up </h1>
+    <p>Where we specialize in knowledge!</p>
     <form class="form-inline">
 
         <div class="input-group">
 
-            <input type="general" class="form-control" size="50" placeholder="Title, Author, Course Code, etc " required>
-            <div class="input-group-btn">
-                <button type="button" class="btn btn-danger">Search</button>
-            </div>
+            <input type="general" class="form-control" size="50" placeholder="Title, Author, Course Code, etc " required><br><br>
+
+          <center>      <button type="submit" class = "button4">Search</button></center><br>
+
         </div>
     </form>
 
     <!--<a href="url">Advanced Search</a>-->
     <p>Click on the button for advanced search.</p>
-    <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Simple collapsible</button>
+    <button type="button" class="button3" data-toggle="collapse" data-target="#demo">Advanced Search</button>
     <div id="demo" class="collapse">
         <div class="container">
-            <h2>Vertical (basic) form</h2>
+            <h2>Enter data in the fields below:</h2>
             <form action="/action_page.php">
                 <div class="form-group">
                     <label form="title">Title:</label>
@@ -170,7 +282,7 @@
                 </div>
 
 
-                <button type="submit" class="btn btn-danger">Advanced Search</button>
+                <button type="submit" class="button3">Search!</button>
             </form>
         </div>
     </div>
@@ -182,9 +294,9 @@
     <div class="row">
         <div class="col-sm-8">
             <h2>Why buy through us?</h2>
-            <h4>We help you find the best deals for the books you want on your campus</h4>
-            <p>With over 20 titles available today</p>
-            <button class="btn btn-default btn-lg">Browse available books now</button>
+            <h4>We help you find the best deals for the books you want on your campus, so you never have to go far.</h4>
+            <p>With over 20 titles available today with sellers eager to get rid of their old books!</p>
+            <button class="btn btn-default btn-lg">Browse Now!</button>
         </div>
         <div class="col-sm-4">
             <span class="glyphicon glyphicon-book logo"></span>
@@ -195,23 +307,28 @@
 
 <div class="container-fluid ">
     <div class="row">
+      <div class="col-sm-4">
+          <span class="glyphicon glyphicon-tags logo"></span>
+      </div>
         <div class="col-sm-8">
-            <h2>Why sell with us?</h2>
-            <h4>We let you choose the price and help you find buyers on campus</h4>
-            <p></p>
-            <button class="btn btn-default btn-lg">Sell your books now</button>
+           <h2>Why sell with us?</h2>
+            <h4>We let you choose the price and help you find buyers on campus.</h4>
+            <p>The process for getting rid of your old textbooks has never been easier! </p>
+    <a href="log_in1.php"> <button class="btn btn-default btn-lg">Create an Account Here!</button></a>
+
         </div>
-        <div class="col-sm-4">
-            <span class="glyphicon glyphicon-tags logo"></span>
-        </div>
+
     </div>
 </div>
 
-<div class="container-fluid bg-grey">
+<div class="col-sm-8">
     <h2>About Us</h2>
-    <h4>MSCI 444 Group </h4>
-    <p>Let's us know what you think </p>
-    <button class="btn btn-default btn-lg">Get in Touch</button>
+    <h4>"The Big-4" </h4>
+    <p>With a passion for the codes and our quest for knowledge, we made a site that we noticed was missing for students.</p>
+
+</div>
+<div class="col-sm-4">
+    <span class="glyphicon glyphicon-info-sign logo"></span>
 </div>
 
 <?php $_GET['error']=NULL; ?>
@@ -226,12 +343,12 @@
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
                <!---- icon login -->
-                <li><a href="log_in1.php"><span class="glyphicon glyphicon-log-out"></span>Log Out</a></li>
+                <li><a href="log_in1.php"><span class="glyphicon glyphicon-log-out"></span>Log In</a></li>
             </ul>
         </div>
     </div>
 </nav>
-<br><br><br>
+
 
 
 </body>
