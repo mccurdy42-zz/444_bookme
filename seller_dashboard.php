@@ -5,7 +5,6 @@ $username = "s2mccurd";
 $password = "Winter@*%2018";
 $dbname = "s2mccurd";
 
-
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
@@ -14,8 +13,7 @@ if ($conn->connect_error) {
 }
 
 $id = $_SESSION['seller_ID'];
-
-
+//header('Location: getAverage.php');
 $query = 'SELECT seller_firstName FROM seller WHERE seller_ID = ?';
 
 $stmt3 = $conn->prepare($query);
@@ -25,6 +23,32 @@ $stmt3->execute();
 $stmt3->store_result();
 //$stmt2->bind_result($seller_ID);
 $stmt3->bind_result($seller_firstName);
+
+//get average rating for seller
+$sql = "SELECT AVG(seller_rating) FROM Rating WHERE seller_ID=?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param('d', $id);
+$stmt->execute();
+$stmt->store_result();
+
+$stmt->bind_result($seller_rating);
+while ($stmt->fetch()){
+   $sellerRating = $seller_rating;
+}
+
+    if ($conn->query($sql) === TRUE) {
+  } else {
+  echo "Error: " . $sql . "<br>" . $mysqli->error;
+  }
+//update seller rating
+  $sql = "UPDATE seller SET average_rating= '$seller_rating' WHERE seller_ID=$id";
+
+  if ($conn->query($sql) === TRUE) {
+      echo "Record updated successfully";
+
+  } else {
+      echo "Error updating record: " . $conn->error;
+  }
 
  ?>
 
@@ -270,9 +294,6 @@ $stmt->bind_result($title, $author, $price, $edition, $bookCondition, $highlight
   <td> <button2><input type = "submit" style= "background-color:#4c4b93" class="glyphicon glyphicon-remove" name="deleteListing" value= "Delete"> </button2></td>
          </form>
 
-
-
-
          </tr>
     <?php } ?>
 
@@ -304,9 +325,12 @@ while($stmt2->fetch()){
 First Name: <?php echo $seller_firstName; ?><br><br><br>
 Last Name:  <?php echo $seller_lastName; ?><br><br><br>
 Email:      <?php echo $seller_email; ?><br><br><br>
+Rating:     <?php echo round( $sellerRating, 1, PHP_ROUND_HALF_UP); ?><br><br><br>
   <!--  <button2><span class="glyphicon glyphicon-edit"></span> Edit</button2>-->
 
 <?php } ?>
+
 </div>
 
 </html>
+
