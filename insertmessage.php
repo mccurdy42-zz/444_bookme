@@ -1,84 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Seller Upload</title>
-    <link href="css/style.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-    <style>
-        .submit-book-group {
-            'width: 50%;
-            margin:auto;
-            margin-top: 50px;
-        }
-        .button{
-            margin-right:20px;
-        }
-        .instructions{
-            margin-bottom:20px;
-        }
-        .gap{
-            margin-bottom:20px;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-        }
-
-        /* Create three unequal columns that floats next to each other */
-        .column {
-            float: left;
-            padding: 10px;
-            height: 400px; /* Should be removed. Only for demonstration */
-        }
-
-        .right {
-            width: 30%;
-            padding-right:5%;
-        }
-        .left{
-            width: 30%;
-            padding-left: 5%;
-        }
-
-        .middle {
-            width: 40%;
-            padding-left: 5%;
-        }
-
-        /* Clear floats after the columns */
-        .row:after {
-            content: "";
-            display: table;
-            clear: both;
-        }
-        .calc{
-            width: 90%;
-            height: 90%;
-        }
-        .basic{
-            margin:auto;
-            width:80%;
-        }
-
-        .space {
-            margin-bottom:2%;
-            font-size: medium;
-        }
-
-    </style>
-
-
-</head>
-
 <body>
 
 <?php
@@ -118,6 +40,43 @@ if (empty($_POST['message_content'])) {
     echo "no message";
  header('Location: ppa.php');
   }
+$sql4 = "SELECT title FROM listing WHERE listing_ID= ?";
+$id = 2;
+$stmt = $mysqli->prepare($sql4);
+$stmt->bind_param('i',$id);
+$stmt->execute();
+$stmt->store_result();
+$stmt->bind_result($title);
+while ($stmt->fetch()){
+ $textbook = $title;
+}
+$sql2 = "SELECT seller_ID FROM listing WHERE listing_ID = ?";
+$id = 2;
+$stmt2 = $mysqli->prepare($sql2);
+$stmt2->bind_param('i',$id);
+$stmt2->execute();
+$stmt2->store_result();
+$stmt2->bind_result($seller_ID);
+while ($stmt2->fetch()){
+$sellerID= $seller_ID;
+}
+//$sellerID is the ID grabbed based off of the listing id
+$sql3 = "SELECT seller_email FROM seller WHERE seller_ID= ?";
+$stmt3 = $mysqli->prepare($sql3);
+$stmt3->bind_param('i',$sellerID);
+$stmt3->execute();
+$stmt3->store_result();
+$stmt3->bind_result($seller_email);
+while ($stmt3->fetch()){
+$selleremail= $seller_email;
+}
+       $msg_content = $_POST['message_content'];
+       $email = $_POST['email'];
+       $msgbuyer_email = "There is interest in your textbook, ";
+       $msgbuyer_pt2 = " from the buyer: ";
+      $msgfinal = $msgbuyer_email . " " . $textbook . " " . $msgbuyer_pt2 . " " . $email . " " . $msg_content;
+       $headers = "From: Book-Me-Up@donotreply.com";
+       mail($selleremail,"Congratulations! There is interest in your textbook on Book-Me-Up.", $msgfinal , $headers);
 
 $result = mysqli_query($mysqli, "SELECT MAX(message_ID) FROM message");
 $row = mysqli_fetch_array($result);
@@ -140,6 +99,14 @@ $message_ID= $row[0]+1;
     } else {
     echo "Error: " . $sql1 . "<br>" . $mysqli->error;
     }
+
+$message_body = "Thank you for contacting the seller about their listing. Once you have completed your transaction with the seller please review them, by entering this code: ";
+$code = $sellerID;
+$link = ", at this link: rating.php ";
+$final = $message_body . " " . $code . " " . $link;
+$headers = "From: Book-Me-Up@donotreply.com";
+mail($email,"Thank you for your interest in a listing!", $final , $headers);
+
 
 if (isset( $_POST['message_content'] )) {
 header('Location: ppa.php');
