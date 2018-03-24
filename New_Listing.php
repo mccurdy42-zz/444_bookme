@@ -1,8 +1,3 @@
-<?php
-session_start();
-$id =$_SESSION['seller_ID'];
- ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +7,114 @@ $id =$_SESSION['seller_ID'];
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
     <style>
-        .submit-book-group {
+          .jumbotron {
+            background-color: #f2f8f2;
+            color: #070707;
+            padding: 2% 10%;
+
+        }
+        .container-fluid {
+            padding: 60px 50px;
+        }
+
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            margin-bottom: 10px;
+        }
+
+        .item h4 {
+            font-size: 150%;
+            line-height: 25%;
+            font-weight: 300;
+            font-style: italic;
+            margin: 0 0 4% 0;
+            line-break: auto;
+        }
+
+        .item span {
+            font-style: normal;
+        }
+
+        .panel-footer h3 {
+            font-size: 32px;
+        }
+        .panel-footer h4 {
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        .navbar {
+            margin-bottom: 0;
+            background-color: #e6f1eb;
+            z-index: 9999;
+            border: 0;
+            font-size: 12px !important;
+            line-height: 1.42857143 !important;
+            letter-spacing: 4px;
+            border-radius: 0;
+        }
+        .navbar li a, .navbar .navbar-brand {
+            color: #070707 !important;
+        }
+
+        /*nav bar - hover over the button it goes black with white text*/
+        .navbar-nav li a:hover, .navbar-nav li.active a {
+            color: #f2f8f2 !important;
+            background-color: #4c4b93 !important;
+        }
+        .navbar-default .navbar-toggle {
+            border-color: transparent;
+            color: #070707 !important;
+        }
+
+        .listing {
+            color: black;
+            padding-left: 8%;
+            font-size: xx-large;
+            /*background colour tbd - have the ability to make this change
+            background-color: #4c4b93;*/
+        }
+
+        .sellerinfo{
+            font-size: medium;
+            padding-left:8%;
+            padding-bottom:5%;
+
+        }
+        @media screen and (max-width: 768px) {
+
+        }
+        button {
+           background-color: #4c4b93;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 150%;
+            /*the first % is for the margin on the top/bottom, second is left/right*/
+            margin: 0% 7%;
+            cursor: pointer;
+            height: 7%;
+            width: 20%;
+        }
+        .button2{
+            background-color: #4c4b93;
+            border: none;
+            color: white;
+            padding: 0.5% 1%;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 100%;
+            /*the first % is for the margin on the top/bottom, second is left/right*/
+            margin: 1% 0%;
+            cursor: pointer;
+        }
+
+          .submit-book-group {
             width: 50%;
             margin:auto;
             margin-top: 50px;
@@ -36,7 +138,8 @@ $id =$_SESSION['seller_ID'];
 <body>
 
 <?php
-
+session_start();
+$id =$_SESSION['seller_id'];
 
 if (isset($_GET['success'])): ?>
 <div class="alert alert-success alert-dismissible">
@@ -46,23 +149,23 @@ if (isset($_GET['success'])): ?>
 <?php endif; ?>
 
 <!--Nav bar-->
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-            </button>
-            <!--logo and little book using glyphicon-->
-            <a class="navbar-brand" href="home.html"><span class="glyphicon glyphicon-book"></span>Book-Me-Up</a>
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav navbar-right">
-               <!---- icon login -->
-                <li><a href="log_in.php"><span class="glyphicon glyphicon-log-out"></span>Log Out</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-<br><br><br>
+ <nav class="navbar navbar-default navbar-fixed-top">
+     <div class="container">
+         <div class="navbar-header">
+             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+             </button>
+             <!--logo and little book using glyphicon-->
+             <a class="navbar-brand" href="home.php"><span class="glyphicon glyphicon-book"></span>Book-Me-Up</a>
+         </div>
+         <div class="collapse navbar-collapse" id="myNavbar">
+             <ul class="nav navbar-nav navbar-right">
+                <!---- icon login -->
+                 <li><a href="log_in1.php"><span class="glyphicon glyphicon-log-out"></span>Log Out</a></li>
+             </ul>
+         </div>
+     </div>
+ </nav><br><br>
+
 <div class="submit-book-group" >
     <h2 class="myh2class"> Upload a Textbook</h2>
 
@@ -136,16 +239,13 @@ if (isset($_GET['success'])): ?>
         <input type="text" class="form-control"name="price" placeholder="Price" required><br>
     </div>
 
-
-    <input type="submit" class="button btn btn-primary btn-md" name="post2" value="Post and Upload Another">
-    <input type="submit" class="btn btn-primary btn-md" name= "post" value="  Post  ">
-
-
-
+ <input type="submit" class="button2" name= "post" value="  Post  ">
+    <input type="submit" class="button2" name="post2" value="Post and Upload Another"><br>
+    
     </form>
+    <a href="seller_dashboard.php"><button class = "button2">Return to Seller Dashboard</button></a>
+
 </div>
-
-
 
 </body>
 </html>
