@@ -2,6 +2,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         body {
             position: relative;
@@ -21,42 +27,202 @@
         navbar {
             margin-bottom: 0px;
         }
+        .jumbotron {
+            background-color: #f2f8f2;
+            color: #070707;
+            padding: 2% 10%;
+
+        }
+        .container-fluid {
+            padding: 60px 50px;
+        }
+
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            margin-bottom: 10px;
+        }
+
+        .item h4 {
+            font-size: 150%;
+            line-height: 25%;
+            font-weight: 300;
+            font-style: italic;
+            margin: 0 0 4% 0;
+            line-break: auto;
+        }
+
+        .item span {
+            font-style: normal;
+        }
+
+        .panel-footer h3 {
+            font-size: 32px;
+        }
+        .panel-footer h4 {
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        .navbar {
+            margin-bottom: 0;
+            background-color: #e6f1eb;
+            background-color: #f2f8f2;
+            z-index: 9999;
+            border: 0;
+            font-size: 12px !important;
+            line-height: 1.42857143 !important;
+            letter-spacing: 4px;
+            border-radius: 0;
+        }
+        .navbar li a, .navbar .navbar-brand {
+            color: #070707 !important;
+        }
+
+        /*nav bar - hover over the button it goes black with white text*/
+        .navbar-nav li a:hover, .navbar-nav li.active a {
+            color: #f2f8f2 !important;
+            background-color: #4c4b93 !important;
+        }
+        .navbar-default .navbar-toggle {
+            border-color: transparent;
+            color: #070707 !important;
+        }
+        .card text-left{
+
+        }
+
+        .form-inline{
+
+        }
+
+        .listing {
+            color: black;
+            padding-left: 8%;
+            font-size: xx-large;
+            /*background colour tbd - have the ability to make this change
+            background-color: #4c4b93;*/
+        }
+
+        .sellerinfo{
+            font-size: medium;
+            padding-left:8%;
+            padding-bottom:5%;
+
+        }
+        @media screen and (max-width: 768px) {
+
+        }
+
+
+        table, th,td{
+            padding-left: 20%;
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td{
+            padding: 5px;
+        }
+        th{
+            text-align: left;
+        }
+        .logo {
+            font-size: 200px;
+        }
+
+        .col-sm-4 {
+            text-align: center;
+            margin: 25px 0;
+
+        }
+        .col-sm-8 {
+            text-align: center;
+            margin: 25px 0;
+
+        }
+
+        /* Dropdown Button */
+        .dropbtn {
+            background-color: #3498DB;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Dropdown button on hover & focus */
+        .dropbtn:hover, .dropbtn:focus {
+            background-color: #2980B9;
+        }
+
+        /* The container <div> - needed to position the dropdown content */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Dropdown Content (Hidden by Default) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        /* Links inside the dropdown */
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        /* Change color of dropdown links on hover */
+        .dropdown-content a:hover {background-color: #f1f1f1}
+
+        /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+        .show {display:block;}
     </style>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
 
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
+<!--Nav bar-->
+
+
+<nav class="navbar navbar-default navbar-fixed-top">
+
+    <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">BookLoversRUS</a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            </button>
+            <!--logo and little book using glyphicon-->
+            <a class="navbar-brand" href="home.php"><span class="glyphicon glyphicon-book"></span>Book-Me-Up</a>
         </div>
-        <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Sell</a></li>
-            <li><a href="#">Page 1</a></li>
-            <li><a href="#">Page 2</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon glyphicon-envelope"></span> Messages</a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-user"></span> My Account</a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Log out</a></li>
-        </ul>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <!---- icon login -->
+                <li><a href="log_in.php"><span class="glyphicon glyphicon-log-in"></span> Seller Log in</a></li>
+            </ul>
+        </div>
     </div>
+
 </nav>
+
+
+<br><br><br>
 
 </div>
 
 </body>
-</html>
+
 
 <meta charset="UTF-8">
 <title> Search Results Page </title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
     * {
@@ -77,6 +243,7 @@
 
 <div class="row">
 
+
     <div class="card text-left">
         <style>
 
@@ -92,8 +259,9 @@
                 box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
             }
 
+
             /* Add some padding inside the card container */
-            </ul>
+
               container {
                   padding: 2px 16px;
               }
@@ -101,15 +269,24 @@
         </style>
 
         <p align = "center"> New Search:</p>
-        <form class="form-inline" align = "center">
-            <div class="input-group">
 
-                <input type="general" class="form-control" size="50" placeholder="Title, Author, Course Code, etc " required>
-                <div class="input-group-btn">
-                    <button type="button" class="btn btn-danger">Search</button>
-                </div>
+        <form class="form-inline" action = test3srp.php method = "GET" align = "center">
+
+            <div class="input-group">
+                <!-- this next part is copied from dbtableform.html
+                <form action="fetch_rec.php" method="GET">
+                <input type="text" name="querytopic" />
+                <input type="submit" value="Search" />
+    <           /form>
+                -->
+
+                <input type="text" name = "querytopic" class="form-control" size="50" placeholder="Title, Author, Course Code, etc " required/><br><br>
+
+                <center>      <button type="submit" class = "button4">Search</button></center><br>
+
             </div>
         </form>
+
 
         <p>
         <ul>
@@ -144,53 +321,18 @@
         $title = $_GET['title'];
         $bookcondition = $_GET['condition'];
 
-        //general query to return all results
 
-       // $query =  "SELECT title, author, price, edition, bookCondition, highlighting, courseCode FROM listing L";
-
-        //this is a
-//        $stmt3 = $mysqli->prepare($query);
-
-//        $stmt3->execute();
-//        $stmt3->store_result();
-//        $stmt3->bind_result($title1, $author1, $price1, $edition1, $bookCondition1, $highlighting1, $courseCode1);
-
-//        //this was for testing purposes only
-//        while ($stmt3->fetch()){
-//            echo $title;
-//            echo $author1;
-//            echo $price1;
-//            echo $edition1;
-//        }
 
 
 
 
         if (!empty($querytopic)){
             $query =  "SELECT listing_ID, title, author, price, edition, photo_url, bookCondition, highlighting, courseCode from listing L where L.title LIKE '%$querytopic%' OR L.author LIKE '%$querytopic%'";
-//            echo $query;
-//            $stmt3 = $mysqli->prepare($query);
-//            $stmt3->execute();
-//            $stmt3->store_result();
-//            $stmt3->bind_result($title1, $author1, $price1, $edition1, $bookCondition1, $highlighting1, $courseCode1);
-//
-//            while($stmt3->fetch()) {
-//                echo $title1;
-//                echo $author1;
-//                echo $price1;
-//                echo $edition1;
-//
-//
-//            }
+
 
         } elseif (!empty($author) || !empty($edition) || !empty($title)){
             $query = "SELECT listing_ID, title, author, price, edition, photo_url, bookCondition, highlighting, courseCode from listing L where L.title LIKE '%$title%' AND L.author LIKE '%$author%' AND L.edition LIKE '%$edition%'";
 
-//            $stmt3 = $mysqli->prepare($query);
-//
-//            $stmt3->execute();
-//            $stmt3->store_result();
-//            $stmt3->bind_result($title1, $author1, $price1, $edition1, $bookCondition1, $highlighting1, $courseCode1);
 
         } else{
             $query = "SELECT listing_ID, title, author, price, edition, photo_url, bookCondition, highlighting, courseCode FROM listing";
@@ -213,7 +355,7 @@
         while($stmt3->fetch()) {
 
             ?>
-            <form action = displayproductpage.php method = "GET">
+            <form action = ppa.php method = "GET">
             <div class="col-sm-3">
                 <div class="card text-center">
                     <div class="card-block">
@@ -231,80 +373,12 @@
         </div>
             </form>
         <?php
-//            echo $title1;
-//            echo $author1;
-//            echo $price1;
-//            echo $edition1;
+
 
 
         }
 
 
-
-
-            //this is a
-  //          $stmt3 = $mysqli->prepare($query);
-
-  //          $stmt3->execute();
-  //          $stmt3->store_result();
-  //          $stmt3->bind_result($title1, $author1, $price1, $edition1, $bookCondition1, $highlighting1, $courseCode1);
-
-
-
-
-
-
-
-//        if ($result = $mysqli->query($query)) {
-//            echo "query topic2 '%$querytopic'";
-//            echo "query2 '%$query%'";
-//
-//
-//        }
-
-        /* close connection */
-        // keeping mysqli open
-        //$mysqli->close();
-
-        //end of mccurds
-
-//
-//        if ($result->num_rows > 0) {
-//            // output data of each row
-//            echo $result -> num_rows;
-//            echo "in the number of rows wowo";
-//
-//
-//
-//            while($row = $result->fetch_assoc()) {
-//                // while there are rows of this data, create a new product card each time *
-//                echo "in second fetch assoc ";
-//
-//
-//
-////                 <div class='col-sm-3'>;
-////                           '<div class="card text-center">';
-////                               '<div class="card-block">';
-////                                  '<img class="img-responsive-center" src='.$photo_url." alt=".$title." style= 'width:60&;height:60%;' margin-top: 20px>";
-////                                  '<h2 class="card-title">'.$price."</h2>";
-////                                    '<h4 class="card-text">'.$title."</h4>";
-////                                    '<ul class="list-group list-group-flush">';
-////                                    '<li class="list-group-item">Author:'.$author.'</li>' ;
-////                                    '<li class="list-group-item">Edition:'.$edition."</li>" ;
-////                                    '</ul>';
-////                                    '<a href="#" class="btn btn-primary">More Details</a> ';
-////                    '</div>';
-////                '</div>';
-////                        '</div>';
-////
-//                }
-//
-//        } else {
-//            echo "<br>";
-//            echo "no search results found";
-//        }
-
-        // moved closing mysqli down hereh
 
         $mysqli->close();
         ?>

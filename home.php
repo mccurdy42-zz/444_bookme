@@ -306,7 +306,7 @@
             <h2>Why buy through us?</h2>
             <h4>We help you find the best deals for the books you want on your campus, so you never have to go far.</h4>
             <p>With over 20 titles available today with sellers eager to get rid of their old books!</p>
-            <button class="btn btn-default btn-lg">Browse Now!</button>
+            <a href = "test3srp.php?querytopic=%"><button class="btn btn-default btn-lg">Browse!</button></a>
         </div>
         <div class="col-sm-4">
             <span class="glyphicon glyphicon-book logo"></span>
@@ -324,7 +324,7 @@
            <h2>Why sell with us?</h2>
             <h4>We let you choose the price and help you find buyers on campus.</h4>
             <p>The process for getting rid of your old textbooks has never been easier! </p>
-    <a href="log_in1.php"> <button class="btn btn-default btn-lg">Create an Account Here!</button></a>
+    <a href="log_in1.php"> <button class="btn btn-default btn-lg">Create an Account!</button></a>
 
         </div>
 

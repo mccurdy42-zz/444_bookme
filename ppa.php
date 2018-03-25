@@ -217,7 +217,7 @@
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
             </button>
             <!--logo and little book using glyphicon-->
-            <a class="navbar-brand" href="#myPage"><span class="glyphicon glyphicon-book"></span>Book-Me-Up</a>
+            <a class="navbar-brand" href="home.php"><span class="glyphicon glyphicon-book"></span>Book-Me-Up</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
@@ -231,45 +231,85 @@
 
 
 <body>
-<?php session_start(); ?>
 
-      <form action="displayproductdetail.php" method="post">
-<div class="submit-book-group">
-    <h2 class="myh2class"style="padding-left: 5%;"><?php echo $_SESSION['title'];?></h2>
-</div>
+
+<?php session_start();
+
+$listingid = $_GET['listing_id'];
+//$_SESSION['listingID'] = $_GET['listing_id'];
+
+//mccurds adding in
+$servername = "localhost";
+$username = "s2mccurd";
+$password = "Winter@*%2018";
+$dbname = "s2mccurd";
+
+$mysqli = new mysqli($servername, $username, $password, $dbname);
+
+
+if ($mysqli->connect_errno) {
+
+    echo "Connect failed " . $mysqli->connect_error;
+    exit();
+}
+
+$query =  "SELECT listing_ID, title, author, price, edition,photo_url, bookCondition, highlighting, courseCode FROM listing  WHERE listing_ID =1";
+if (!empty($listingid)){
+    $query =  "SELECT listing_ID, title, author, price, edition,photo_url, bookCondition, highlighting, courseCode FROM listing WHERE listing_ID ='$listingid'";
+}
+
+$stmt3 = $mysqli->prepare($query);
+
+$stmt3->execute();
+
+$stmt3->store_result();
+
+$stmt3->bind_result($listing_ID1,$title1, $author1, $price1, $edition1 ,$photo_url1 , $bookCondition1, $highlighting1, $courseCode1);
+
+while ($stmt3->fetch()){
+
+?>
+
+<!--      <form action="displayproductdetail.php" method="post">-->
+        <div class="submit-book-group">
+            <h2 class="myh2class"style="padding-left: 5%;"><?php echo $title1;?></h2>
+        </div>
 
 
 <div class="row">
     <div class="column left">
-        <center><img src =<?php echo $_SESSION['photo_url'];?> alt = "Calculus Book" class="calc"></center>
+        <center><img src =<?php echo $photo_url1;?> alt = "Calculus Book" class="calc"></center>
     </div>
 
      <div class="column middle">
 
-        <h2> <?php echo "$" . " " . $_SESSION['price'];?> </h2>
+       <h2> <?php echo "$" . " " . $price1;?> </h2>
 
         <div class="space">
-            <?php echo $_SESSION['author'];?> <br>
-        </div>
-
-        <div class="space">
-            Edition: <?php echo $_SESSION['edition'];?><br>
+         <?php echo $author1;?> <br>
         </div>
 
         <div class="space">
-            Condition: <?php echo $_SESSION['bookCondition'];?> <br>
+          Edition: <?php echo $edition1;?><br>
         </div>
 
         <div class="space">
-            Highlighting: <?php echo $_SESSION['highlighting'];?><br>
+            Condition: <?php echo $bookCondition1;?> <br>
         </div>
 
         <div class="space">
-            Course Code: <?php echo $_SESSION['courseCode'];?><br>
+            Highlighting: <?php echo $highlighting1;?><br>
+        </div>
+
+        <div class="space">
+            Course Code: <?php echo $highlighting1;?><br>
         </div>
         </div>
 
-</form>
+<!--</form>-->
+    <?php }
+
+    ?>
 
     <div class="column right">
         <div class="basic">
@@ -277,19 +317,22 @@
 
             <form action="insertmessage.php" method="post">
 
-            <input type="text" class="form-control"name="firstname" placeholder="Your First Name"><br>
-            <input type="text" class="form-control"name="lastname" placeholder="Your Last Name"><br>
-            <input type="text" class="form-control"name="email" placeholder="Your Email"><br>
-            <input type="text" class="form-control"name="message_content" placeholder="Your Message" style="height:150px;"><br>
-            <input type="submit" class="button btn btn-primary btn-md" value="Send Email" style="width:200px;" onclick="myFunction()">
-
+                <input type="text" class="form-control"name="firstname" placeholder="Your First Name"><br>
+                <input type="text" class="form-control"name="lastname" placeholder="Your Last Name"><br>
+                <input type="text" class="form-control"name="email" placeholder="Your Email" required><br>
+                <input type="text" class="form-control"name="message_content" placeholder="Your Message" style="height:150px;"><br>
+                <input type="hidden" class = "form-control" name="listing_id" value="<?php echo $listingid?>">
+                <input type="submit" class="button btn btn-primary btn-md" value="Send Email" style="width:200px;" >
+<!--  taken out the my function to test for page reloading
+          onclick="myFunction()"
+          -->
                 <p id="demo"></p>
 
-                 <script>
-                    function myFunction() {
-                        document.getElementById("demo").innerHTML = "Message Sent!";
-                    }
-                </script>
+<!--                 <script>-->
+<!--                    function myFunction() {-->
+<!--                        document.getElementById("demo").innerHTML = "Message Sent!";-->
+<!--                    }-->
+<!--                </script>-->
 
             </form>
 

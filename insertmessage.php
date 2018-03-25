@@ -40,8 +40,10 @@ if (empty($_POST['message_content'])) {
     echo "no message";
  header('Location: ppa.php');
   }
+
+
 $sql4 = "SELECT title FROM listing WHERE listing_ID= ?";
-$id = 2;
+$id = $_POST['listing_id'];
 $stmt = $mysqli->prepare($sql4);
 $stmt->bind_param('i',$id);
 $stmt->execute();
@@ -51,7 +53,7 @@ while ($stmt->fetch()){
  $textbook = $title;
 }
 $sql2 = "SELECT seller_ID FROM listing WHERE listing_ID = ?";
-$id = 2;
+$id = $_POST['listing_id'];
 $stmt2 = $mysqli->prepare($sql2);
 $stmt2->bind_param('i',$id);
 $stmt2->execute();
@@ -109,7 +111,10 @@ mail($email,"Thank you for your interest in a listing!", $final , $headers);
 
 
 if (isset( $_POST['message_content'] )) {
-header('Location: ppa.php');
+    //change header
+
+    $enterheader = "Location: ppa.php?listing_id=$id";
+header($enterheader);
 echo "Message sent! im";
   }
 
