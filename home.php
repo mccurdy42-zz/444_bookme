@@ -225,7 +225,7 @@
 <div class="jumbotron text-center">
     <h1>Book-Me-Up </h1>
     <p>Where we specialize in knowledge!</p>
-    <form class="form-inline" action = fetch_rec.php method = "GET">
+    <form class="form-inline" action = test3srp.php method = "GET">
 
         <div class="input-group">
             <!-- this next part is copied from dbtableform.html
@@ -248,7 +248,7 @@
     <div id="demo" class="collapse">
         <div class="container">
             <h2>Enter data in the fields below:</h2>
-            <form action = fetch_rec.php method = "GET">
+            <form action = test3srp.php method = "GET">
                 <div class="form-group">
                     <label form="title">Title:</label>
                     <input type="search" class="form-control" size="50" placeholder="Title (Required)" name="title" required>
