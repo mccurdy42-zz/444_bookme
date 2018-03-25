@@ -47,7 +47,7 @@ $rating_ID= $row[0]+1;
 
      if ($mysqli->query($sql1) === TRUE) {
    // echo "Record created successfully";
-    header('Location: insertrating.php');
+    header('Location: home.php');
     } else {
     echo "Error: " . $sql1 . "<br>" . $mysqli->error;
     }
