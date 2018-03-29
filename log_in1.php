@@ -172,12 +172,24 @@
                 <center>   <label form="Firstname">First Name:</label><br>
                     <input type="text" name= "firstName" class="form-control" size="50" placeholder="First Name (Required)" required><br>
                     <label form="lastName">Last Name:</label><br>
-                    <input type="text" name= "lastName" class="form-control" size="50" placeholder="Last Name(Required)" required><br>
+                    <input type="text" name= "lastName" class="form-control" size="50" placeholder="Last Name(Required)"  required><br>
                     <label form="email">E-Mail Address:</label><br>
-                    <input type="text" name= "email" class="form-control" size="50" placeholder="E-Mail (Required)" required><br>
+                    <input type="text" name= "email" class="form-control" size="50" placeholder="E-Mail (Required)" id = "mail" required ><br>
                     <label form="Password">Password:</label><br>
-                    <input type="text" name= "password" class="form-control" size="50" placeholder="Password (Required)" required><br>
+                    <input type="text" name= "password" class="form-control" size="50" placeholder="Password (Required)"  minlength="4" required><br>
                     <button class="button2">Submit <span class = "glyphicon glyphicon-ok-circle"></span></button></center>
+                <script>
+                    var email = document.getElementById("mail");
+
+                    email.addEventListener("input", function (event) {
+                        if (email.validity.typeMismatch) {
+                            email.setCustomValidity("I expect an e-mail, darling!");
+                        } else {
+                            email.setCustomValidity("");
+                        }
+                    });
+                </script>
+
             </div>
 
 </body>

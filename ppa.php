@@ -320,19 +320,19 @@ while ($stmt3->fetch()){
                 <input type="text" class="form-control"name="firstname" placeholder="Your First Name"><br>
                 <input type="text" class="form-control"name="lastname" placeholder="Your Last Name"><br>
                 <input type="text" class="form-control"name="email" placeholder="Your Email" required><br>
-                <input type="text" class="form-control"name="message_content" placeholder="Your Message" style="height:150px;"><br>
+                <input type="text" class="form-control"name="message_content" placeholder="Your Message" style="height:150px;" required><br>
                 <input type="hidden" class = "form-control" name="listing_id" value="<?php echo $listingid?>">
-                <input type="submit" class="button btn btn-primary btn-md" value="Send Email" style="width:200px;" >
+                <input type="submit" class="button btn btn-primary btn-md" value="Send Email" style="width:200px;"  >
 <!--  taken out the my function to test for page reloading
           onclick="myFunction()"
           -->
                 <p id="demo"></p>
 
-<!--                 <script>-->
-<!--                    function myFunction() {-->
-<!--                        document.getElementById("demo").innerHTML = "Message Sent!";-->
-<!--                    }-->
-<!--                </script>-->
+                 <script>
+                    function myFunction() {
+                        document.getElementById("demo").innerHTML = "Message Sent!";
+                    }
+                </script>
 
             </form>
 

@@ -321,7 +321,13 @@
         $title = $_GET['title'];
         $bookcondition = $_GET['condition'];
 
+        if ($edition == "%25"){
+            $edition = "%";
+        }
 
+        if ($bookcondition == "%25"){
+            $bookcondition = "%";
+        }
 
 
 
@@ -331,7 +337,7 @@
 
 
         } elseif (!empty($author) || !empty($edition) || !empty($title)){
-            $query = "SELECT listing_ID, title, author, price, edition, photo_url, bookCondition, highlighting, courseCode from listing L where L.title LIKE '%$title%' AND L.author LIKE '%$author%' AND L.edition LIKE '%$edition%'";
+            $query = "SELECT listing_ID, title, author, price, edition, photo_url, bookCondition, highlighting, courseCode from listing L where L.title LIKE '%$title%' AND L.author LIKE '%$author%' AND L.edition LIKE '%$edition%' AND L.bookCondition LIKE '%$bookcondition%'";
 
 
         } else{
@@ -339,6 +345,7 @@
             $no_pass_value =  "no search input were found results were found while searching for '$querytopic' '$author''$edition''$title'";
             echo $no_pass_value;
         }
+        
         $result = $mysqli->query($query);
 
         if($result->num_rows <=0 ){

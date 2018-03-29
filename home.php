@@ -262,6 +262,7 @@
                 <div class="form-group">
                     <label form="editionSelect">Edition</label>
                     <select class="form-control" id="editionSelect" name = "edition" >
+                        <option value = "%" >Any Edition</option>
                         <option value = "1" >1</option>
                         <option value = "2" >2</option>
                         <option value = "3">3</option>
@@ -284,6 +285,7 @@
 
                 <div class="form-group">
                     <label form="condition">Book Condition:</label>
+                    <label class="radio-inline gap"><input type="radio" name="condition" value ="%" checked="checked">Any Condition</label>
                     <label class="radio-inline gap"><input type="radio" name="condition" value ="Brand New">Brand New</label>
                     <label class="radio-inline gap"><input type="radio" name="condition" value = "Gently Used">Gently Used</label>
                     <label class="radio-inline gap"><input type="radio" name="condition" value = "Very Used">Very Used</label>

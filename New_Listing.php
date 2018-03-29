@@ -236,7 +236,12 @@ if (isset($_GET['success'])): ?>
 
     <div class="basic">
         What price would you like to sell this book for? <br>
-        <input type="text" class="form-control"name="price" placeholder="Price" required><br>
+        <input type="number" value="85" min="0" step="0.01" data-number-to-fixed="2" data-number-stepfactor="100" class="currency" id="c1"name="price" placeholder="Price" required><br>
+<!--        <div class="form-row">-->
+<!--            <label for="c1">Currency</label>-->
+<!--            <input type="number" value="85" min="0" step="0.01" data-number-to-fixed="2" data-number-stepfactor="100" class="currency" id="c1" />-->
+<!--        </div>-->
+<!--        chanign input type from text to number. orginial line is <input type="text" class="form-control"name="price" placeholder="Price" required><br>-->
     </div>
 
  <input type="submit" class="button2" name= "post" value="  Post  ">
